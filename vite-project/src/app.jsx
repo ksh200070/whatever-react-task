@@ -1,9 +1,12 @@
 import { createElement } from "./lib/createElement";
+import Header from "./component/Header";
+import Content from "./component/Content";
 
 function App() {
   return (
     <div id="app">
-      <h1>hello, react clone!</h1>
+      <Header />
+      <Content />
     </div>
   );
 }
