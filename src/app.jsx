@@ -1,4 +1,3 @@
-import { createElement } from "./lib/createElement";
 import Header from "./component/Header";
 import Content from "./component/Content";
 
