@@ -1,4 +1,6 @@
 import App from "./App.jsx";
+import render from "./lib/react/render";
+
 const appElement = App();
 
-console.log(JSON.stringify(appElement, null, 2));
+render(appElement, document.querySelector("#root"));
