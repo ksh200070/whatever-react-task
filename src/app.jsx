@@ -1,11 +1,13 @@
-import Header from "./component/Header";
-import Content from "./component/Content";
-
 function App() {
+  const handleButton = () => {
+    console.log("버튼");
+  };
   return (
-    <div>
-      <Header />
-      <Content />
+    <div id="App">
+      <span>설명</span>
+      <button className="add-button" onClick={handleButton}>
+        버튼
+      </button>
     </div>
   );
 }
