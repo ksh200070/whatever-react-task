@@ -1,4 +1,5 @@
 export default function render(virtualDOM, container) {
+  container.innerHTML = "";
   container.appendChild(renderRealDOM(virtualDOM));
 }
 
