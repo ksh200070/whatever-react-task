@@ -1,11 +1,11 @@
-import Header from "./component/Header";
-import Content from "./component/Content";
+import Counter from "./component/Counter";
+import Todo from "./page/Todo";
 
 function App() {
   return (
-    <div id="app">
-      <Header />
-      <Content />
+    <div id="App">
+      <Counter />
+      <Todo />
     </div>
   );
 }
