@@ -1,13 +1,9 @@
 export default function render(virtualDOM, container) {
-  container.innerHTML = "";
-  container.appendChild(renderRealDOM(virtualDOM));
-}
-
-function renderRealDOM(virtualDOM) {
   if (virtualDOM === undefined) return;
 
   if (typeof virtualDOM === "string" || typeof virtualDOM === "number") {
-    return document.createTextNode(virtualDOM);
+    container.appendChild(document.createTextNode(virtualDOM));
+    return;
   }
 
   const realDOM = document.createElement(virtualDOM.tagName);
@@ -24,10 +20,8 @@ function renderRealDOM(virtualDOM) {
 
   // 재귀 호출
   if (virtualDOM.children) {
-    virtualDOM.children.map(renderRealDOM).forEach((node) => {
-      realDOM.appendChild(node);
-    });
+    virtualDOM.children.forEach((child) => render(child, realDOM));
   }
 
-  return realDOM;
+  container.appendChild(realDOM);
 }

@@ -1,6 +1,12 @@
 import App from "./App.jsx";
 import render from "./lib/react/render";
 
-const appElement = App();
+const root = document.querySelector("#root");
 
-render(appElement, document.querySelector("#root"));
+export function rerender() {
+  root.innerHTML = "";
+  const appElement = App();
+  render(appElement, root);
+}
+
+rerender();
