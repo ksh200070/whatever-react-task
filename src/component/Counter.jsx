@@ -22,7 +22,8 @@ export default function Counter() {
   };
 
   return (
-    <div>
+    <section id="counter">
+      <h1>Counter</h1>
       <button className="reset-button" onClick={handleReset}>
         reset
       </button>
@@ -32,6 +33,6 @@ export default function Counter() {
       <h2>{count2}</h2>
       <button onClick={() => handleCounter(2, "plus")}>+</button>
       <button onClick={() => handleCounter(2, "minus")}>-</button>
-    </div>
+    </section>
   );
 }

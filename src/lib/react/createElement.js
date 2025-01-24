@@ -3,5 +3,5 @@ export function createElement(tagName, props, ...children) {
     return tagName.apply(null, [props, ...children]);
   }
 
-  return { tagName, props, children };
+  return { tagName, props, children: children.flat() };
 }

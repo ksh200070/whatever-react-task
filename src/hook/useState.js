@@ -54,9 +54,11 @@ function renderRealDOM(virtualDOM) {
   });
 
   // 재귀 호출
-  virtualDOM.children.map(renderRealDOM).forEach((node) => {
-    realDOM.appendChild(node);
-  });
+  if (virtualDOM.children) {
+    virtualDOM.children.map(renderRealDOM).forEach((node) => {
+      realDOM.appendChild(node);
+    });
+  }
 
   return realDOM;
 }
