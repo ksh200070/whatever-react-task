@@ -1,5 +1,5 @@
 import App from "./App.jsx";
-import render from "./lib/react/render";
+import { render } from "./hook/useState";
 
 const appElement = App();
 
