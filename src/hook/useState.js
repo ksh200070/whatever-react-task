@@ -12,15 +12,16 @@ export function useState(initialState) {
 
   const state = states[key];
   const setState = (newState) => {
-    if (state !== newState) {
-      if (typeof newState === "function") {
-        states[key] = newState(states[key]);
-      } else {
-        states[key] = newState;
-      }
+    if (state === newState) return;
+    if (JSON.stringify(newState) === JSON.stringify(state)) return;
 
-      render(App(), document.querySelector("#root"));
+    if (typeof newState === "function") {
+      states[key] = newState(states[key]);
+    } else {
+      states[key] = newState;
     }
+
+    render(App(), document.querySelector("#root"));
   };
 
   currentStateKey += 1;
