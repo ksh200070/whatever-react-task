@@ -23,8 +23,8 @@ export function useState(initialState) {
       states[key] = newState;
     }
 
-    rerender();
     currentStateKey = 0;
+    rerender();
   };
 
   currentStateKey += 1;
